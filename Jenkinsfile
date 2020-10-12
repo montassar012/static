@@ -4,8 +4,8 @@ pipeline {
     stage('Upload to AWS.') {
       steps {
         withAWS(region:'us-east-1',credentials: 'aws-static') {
-          s3Upload(file: index.html, bucket:"udacity-jenkins-static-mk", path:'/')
-      }
+          s3Upload(file: 'index.html', bucket:'udacity-jenkins-static-mk', path:'index.html')
+        }
       }
     }
 
